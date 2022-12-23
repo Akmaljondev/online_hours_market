@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahsulotlar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <style>
+        .dan{
+            color: blue;
+            font-size: 30px;
+            width: 5%;
+        }
+        .gacha{
+            color: blue;
+            font-size: 30px;
+            width: 5%;
+        }
+        .selectCategory{
+            border-radius: 15px;
+            width: 40%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.471);
+        }
+        .costStart{
+            border-radius: 15px;
+            width: 20%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.471);
+        }
+        .costEnd{
+            border-radius: 15px;
+            width: 20%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.471);
+        }
+        .searchHours{
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.471);
+        }
+        .card{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.471);
+            border-radius: 20px;
+            border-color: blue;
+        }
+        .titleName{
+            color: blue;
+            font-weight: bolder;
+            font-size: large;
+            text-align: center;
+        }
+        .products{
+            width: 30%;
+        }
+        .basket{
+            width: 30%;
+        }
+        .products{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.471);
+        }
+        .basket{
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.471);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button type="button" class="products mt-3 btn btn-outline-primary" onclick="products()">Mahsulotlar</button>
+        <button type="button" class="basket mt-3 btn btn-outline-primary float-end" onclick="basket()">Savatcha</button>
+        <br>
+        <select class="selectCategory mt-3 btn btn-outline-primary" onchange="getHours(this.value)">
+            <option selected disabled>Kategoriya</option>
+            <option value="classic">classic</option>
+            <option value="Smart">Smart</option>
+            <option value="compas">compas</option>
+            <option value="Sport">Sport</option>
+            <option value="Quartz">Quartz</option>
+        </select>
+        <input type="number" oninput="searchCost()" class="costStart mt-3 btn btn-outline-primary">
+        <b class="dan">-dan</b>
+        <input type="number" oninput="searchCost()" class="costEnd mt-3 btn btn-outline-primary">
+        <b class="gacha">-gacha</b>
+        <br>
+        <input type="text" oninput="searchText(this)" class="searchHours mt-3 btn btn-outline-primary form-control" placeholder="Qidiruv">
+    </div>
+    <div class="bigDiv container">
+
+    </div>
+
+    <!-- Modal adButton -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-7" id="exampleModalLabel">Soatlar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="hours.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
