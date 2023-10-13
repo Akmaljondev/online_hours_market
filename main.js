@@ -15,20 +15,20 @@ reRender(hours)
 
 function reRender(newData){
     row.innerHTML = ""
-    newData.map((item, index) => {
+    newData.map((item) => {
         let seeButton = document.createElement("button")
         seeButton.innerText = "Ko'rish"
         seeButton.setAttribute("class", "btn btn-primary")
         seeButton.setAttribute("data-bs-toggle", "modal")
         seeButton.setAttribute("data-bs-target", "#exampleModal")
-        seeButton.setAttribute("onclick", `seeButton(${index})`)
+        seeButton.setAttribute("onclick", `seeButton(${item.id})`)
         seeButton.style.borderRadius = "15px"
         seeButton.style.boxShadow = "0 0 10px blue"
 
         let buyButton = document.createElement("button")
         buyButton.innerText = "Sotib olish"
         buyButton.setAttribute("class", "btn btn-primary mt-2")
-        buyButton.setAttribute("onclick", `buyButton(${index})`)
+        buyButton.setAttribute("onclick", `buyButton(${item.id})`)
         buyButton.style.borderRadius = "15px"
         buyButton.style.boxShadow = "0 0 10px blue"
 
@@ -84,10 +84,10 @@ function getHours(option){
     reRender(getHoursCategory)
 }
 
-function seeButton(index){
+function seeButton(item){
 let modalBady = document.querySelector(".modal-body")
     let foto = document.createElement("img")
-    foto.src = hours[index].img_src 
+    foto.src = hours[item.id].img_src 
     foto.style.width = "100%"
     foto.style.borderRadius = "20px"
     foto.style.boxShadow = "0 0 10px black"
@@ -270,4 +270,4 @@ function minusButton(){
 
 function pilusButton(){
     
-}
+}   
